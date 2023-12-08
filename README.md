@@ -30,6 +30,53 @@ For this homework, you will work in groups of 5 people. You are expected to incl
 
 ### 2. Your drive sharing company has decided to sell users data to advertisers.
 
+### First tabs
+
+{% tabs log %}
+
+{% tab log php %}
+```php
+var_dump('hello');
+```
+{% endtab %}
+
+{% tab log js %}
+```javascript
+console.log('hello');
+```
+{% endtab %}
+
+{% tab log ruby %}
+```javascript
+pputs 'hello'
+```
+{% endtab %}
+
+{% endtabs %}
+
+### Second tabs
+
+{% tabs data-struct %}
+
+{% tab data-struct yaml %}
+```yaml
+hello:
+  - 'whatsup'
+  - 'hi'
+```
+{% endtab %}
+
+{% tab data-struct json %}
+```json
+{
+    "hello": ["whatsup", "hi"]
+}
+```
+{% endtab %}
+
+{% endtabs %}
+
+
 - You have been asked to loosen up your design so that data can be sold to advertisers. Additionally, your manager has asked you to provide a list of data that can be sold, so the advertisers can maximize the accuracy of the ads.
 - Provide the details of the new privacy design following the same principles you used for the original design.
 - Repeat the pen-tester exercise done for the original design.
