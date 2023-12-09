@@ -1,13 +1,4 @@
-## Homework 4 HOla
-
-### Information Security
-
-### Instructions:
-
-For this homework, you will work in groups of 5 people. You are expected to include with your submission the following details:
-
-1. A URL to the GitHub page containing your group's assignment
-2. Each member of the team will submit a grade (0 to 100) for the team members based on the amount of work that each member contributed
+## Ride Sharing Information Security
 
 ### 1. Design the system components of a drive sharing application (ex: Uber, Lyft). Specify what elements are necessary for this application to work.
 
