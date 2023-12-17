@@ -3,8 +3,16 @@
 
 
 
+![Graph Screenshot](Screenshot1.png)
+
+
+
+
 
 In your design, you must provide a list of the data that you need to collect for the operation of the application. For each, provide a description of why you need this data. Examples:
+
+![Database Design](Screenshot2.png)
+
 
 
 
@@ -74,6 +82,8 @@ Ride Preferences: Such as car type, special requests, or specific requirements.
 - **Location-Based Recommendations:** Offering suggestions for nearby restaurants, attractions, or services.
 - **Current location every 30sec**
 
+  ![CurrentLocationGraph](Screenshot3.png)
+
 **User Feedback and Ratings:**
 
 - **Feedback Analysis**: Analyzing user comments and ratings to identify areas for improvement or address specific user concerns.
@@ -102,23 +112,23 @@ Ride Preferences: Such as car type, special requests, or specific requirements.
 
 - Call emergency services
 - Your name, cellphone number
-- Car's make, model, color, license plate, and live location automatically available to **dispatchers**
+- Car’s make, model, color, license plate, and live location automatically available to **dispatchers**
 
 **Terms of agreement:** 
 
-Make sure you keep a record of your customer's written agreement to these terms.
+Make sure you keep a record of your customer’s written agreement to these terms.
 
 **Stripe Compliance:**
 
-You're responsible for your compliance with all applicable laws, regulations, and network rules when saving a customer's payment details. For instance, if you want to save their payment method for future use, such as charging them when they're not actively using your website or app. Add terms to your website or app that state how you plan to save payment method details and allow customers to opt in. If you want to charge them when they're offline, make sure your terms include the following:
+You’re responsible for your compliance with all applicable laws, regulations, and network rules when saving a customer’s payment details. For instance, if you want to save their payment method for future use, such as charging them when they’re not actively using your website or app. Add terms to your website or app that state how you plan to save payment method details and allow customers to opt in. If you want to charge them when they’re offline, make sure your terms include the following:
 
-- The customer's agreement to your initiating a payment or a series of payments on their behalf for specified transactions.
+- The customer’s agreement to your initiating a payment or a series of payments on their behalf for specified transactions.
 - The anticipated timing and frequency of payments (for example, if the charges are for scheduled installments, subscription payments, or unscheduled top-ups).
 - How you determine the payment amount.
 - Your cancellation policy, if the payment method is for a subscription service.
 
 
-` `**What kind of data do you need to collect to measure the performance and efficiency of the application?** 
+**What kind of data do you need to collect to measure the performance and efficiency of the application?** 
 
 **User Metrics:**
 
@@ -254,16 +264,16 @@ Tokenization transforms sensitive payment data into a non-sensitive equivalent, 
 - Token usage: When the business needs to process the transaction, they can send the token to the payment processor or tokenization service. The service then maps the token back to the original payment data securely, allowing the transaction to be completed without exposing the sensitive information to the business or other intermediaries.
 - Token reusability: For recurring transactions, such as subscriptions or stored customer profiles, the same token can be used multiple times without collecting sensitive payment data again. This simplifies the payment process while maintaining security.
 
-
-(This is how you see a customer's credit card info in stripe)
+![Graph1Screenshot](Screenshot4.png)
+(This is how you see a customer’s credit card info in stripe)
 
 **- Include a privacy design for the application.** 
 
-`  `**- For all the data that is being collected, what can be seen and by whom?** 
+**- For all the data that is being collected, what can be seen and by whom?** 
 
-` `**- What information should have restricted access?** 
+**- What information should have restricted access?** 
 
-` `**- what information should not be seen by anyone?**
+**- what information should not be seen by anyone?**
 
 **User Information:**
 
@@ -353,7 +363,7 @@ Tokenization transforms sensitive payment data into a non-sensitive equivalent, 
 
 **Assume you are a pen-tester, and you are in charge of testing the privacy design proposed.**
 
-`    `- What are the risks if you are able to get access to the app as a user, as an admin, and as developer?
+- What are the risks if you are able to get access to the app as a user, as an admin, and as developer?
 
 1. **Access as a User:**
    1. **Risk:** If an attacker gains unauthorized access as a user, they may have access to personal information, location data, and transaction history.
@@ -373,7 +383,7 @@ Tokenization transforms sensitive payment data into a non-sensitive equivalent, 
       1. Unauthorized access to development databases containing test user data or other sensitive information.
       1. Injection of malicious code into the application, compromising user data integrity.
 
-` `- In any of these cases, what are the ways that an attacker can provoke a privacy breach? What kind of attacks can be used to accomplish this.
+- In any of these cases, what are the ways that an attacker can provoke a privacy breach? What kind of attacks can be used to accomplish this.
 
 1. **Access as a User:**
    1. **Attack Scenarios:**
@@ -397,7 +407,7 @@ Tokenization transforms sensitive payment data into a non-sensitive equivalent, 
       1. Exposure of sensitive application logic, leading to potential exploitation of vulnerabilities.
       1. Unauthorized access to development databases, risking exposure of test user data.
 
-` `- Write an ethical analysis of the consequences of a privacy breach of the app for each of the cases above. 
+- Write an ethical analysis of the consequences of a privacy breach of the app for each of the cases above. 
 
 
 
@@ -441,17 +451,38 @@ Based on the original design, some things should be considered like:
 1. **Minimal Data Collection:**
    1. Limit the collection of user data to what is strictly necessary for the core functionality of the drive-sharing service. Avoid collecting unnecessary information that could be potentially sold to advertisers.
 
+**User Information:**
+
+1. **Who Can See:**
+   1. **Users themselves:** Access to their own profile and ride history.
+   1. **Customer Support:** Limited access to user information for issue resolution.
+   1. **Advertisers (If opted for):** Limited access to anonymous demographic data.
+1. **Restricted Access:**
+   1. **Other Users:** User profiles and personal information should not be accessible to other users.
+
+**Location Data:**
+
+1. **Who Can See:**
+   1. **Drivers:** Access to the real-time location of passengers for ride coordination.
+   1. **Passengers:** Access to the real-time location of the assigned driver.
+   1. **Customer Support:** Limited access for resolving location-related issues.
+   1. **Advertisers (If opted for):** Limited access to visited locations (Home and other personal locations specified by the user will not be collected)
+1. **Restricted Access:**
+   1. **Unauthorized Employees:** Location data should not be accessible to employees without a legitimate need.
+
+**The rest of the privacy design will remain the same.**
+
 - Repeat the pen-tester exercise done for the original design. 
 
 1. **Risks and Potential Privacy Breaches:**
-- ` `**User Access:**
+- **User Access:**
   - **Risk:** Unauthorized users gaining access to personal profiles, ride history, and other sensitive information.
   - **Possible Attacks:** Credential stuffing, brute force attacks, or exploiting vulnerabilities in the app's authentication system.
   - **Ethical Consequences:** Violation of user privacy, potential misuse of personal information, loss of trust, and reputational damage.
 - **Admin Access:**
   - **Risk:** Unauthorized access to sensitive user data, financial records, and security logs.
   - **Possible Attacks:** Exploiting vulnerabilities in admin interfaces, social engineering attacks, or unauthorized access to admin credentials.
-  - **Ethical Consequences:** Breach of user confidentiality, misuse of financial data, and potential legal repercussions, leading to severe damage to the company's reputation.
+  - **Ethical Consequences:** Breach of user confidentiality, misuse of financial data, and potential legal repercussions, leading to severe damage to the company's reputation.loc
 - **Developer Access:**
   - **Risk:** Unauthorized access to the app's source code, potentially exposing vulnerabilities that could be exploited.
   - **Possible Attacks:** Exploiting weak development practices, injecting malicious code, or taking advantage of insecure API endpoints.
@@ -476,8 +507,6 @@ In terms of the loss of users, individuals expect their data to be handled respo
 Finally, in terms of the security risk consequences, the more parties that have access to user data, the higher the risk of security breaches. Advertisers may lack the same stringent security measures as the app, thereby increasing the vulnerability of user data to unauthorized access and security attacks. Moreover, once data is shared with advertisers, the original platform has less control over how the data is handled and secured. The proliferation of entities with access to the data makes it more challenging to monitor and enforce security protocols. Among all the consequences, this one is the most severe because security breaches can have enduring effects, including the loss of customer trust, legal actions, and financial repercussions. Recovering from a security incident can be a complex and resource-intensive process.
 
 In conclusion, companies must prioritize transparency, user consent, and data security to maintain trust, protect user privacy, and uphold ethical standards in their business practices. Selling user data to advertisers without the user's knowledge or explicit consent shouldn't be part of the company's policies. This is not only due to the potential consequences mentioned previously but also because personal information is a highly sensitive matter that demands utmost respect. Respecting user privacy is not only an ethical obligation but a fundamental element in building and sustaining a relationship of trust between the company and its users.
-
-
 
 
 
