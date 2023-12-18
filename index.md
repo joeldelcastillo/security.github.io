@@ -3,7 +3,7 @@
 
 
 
-![Graph Screenshot](Screenshot.png)
+![Graph Screenshot](Screenshot1.png)
 
 
 
@@ -11,7 +11,7 @@
 
 In your design, you must provide a list of the data that you need to collect for the operation of the application. For each, provide a description of why you need this data. Examples:
 
-![Database Design](Screenshot.png)
+![Database Design](Screenshot2.png)
 
 
 
